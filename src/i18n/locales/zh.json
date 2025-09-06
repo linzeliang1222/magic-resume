@@ -187,11 +187,11 @@
   "pdfExport": {
     "button": {
       "export": "导出",
-      "exportPdf": "PDF(服务端)",
+      "exportPdf": "PDF（服务端，若导出失败，请使用下面的浏览器打印）",
       "exportJson": "JSON配置",
       "exporting": "导出中...",
       "exportingJson": "导出中...",
-      "print": "PDF(浏览器打印)"
+      "print": "PDF（浏览器打印）"
     },
     "toast": {
       "success": "PDF导出成功",
