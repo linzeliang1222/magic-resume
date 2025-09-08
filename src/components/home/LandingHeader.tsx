@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { FileText, Menu, Moon, Sun, X } from "lucide-react";
+import { FileText, Menu, Moon, Sun, X, ExternalLink } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/shared/Logo";
@@ -52,6 +52,16 @@ export default function LandingHeader() {
                 {t("changelog") || "更新日志"}
               </Link> */}
 
+              <Button
+                variant="outline"
+                className="h-8 text-sm px-4 gap-1.5"
+                onClick={() => {
+                  window.open("https://www.givemeoc.com/?aff=1740", "_blank");
+                }}
+              >
+                校招岗位汇总
+                <ExternalLink className="h-3.5 w-3.5" />
+              </Button>
               <GoDashboard>
                 <Button
                   type="submit"
