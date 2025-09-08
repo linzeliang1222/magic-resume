@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Metadata } from "next";
 import "./globals.css";
 import "./font.css";
+import OCModalClient from "@/components/home/OCModalClient";
 
 type Props = {
   children: ReactNode;
@@ -23,5 +24,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Props) {
-  return children;
+  return (
+    <>
+      {children}
+      <OCModalClient />
+    </>
+  );
 }
