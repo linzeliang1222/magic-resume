@@ -1,8 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles, ArrowRight, ExternalLink } from "lucide-react";
 import ScrollBackground from "./client/ScrollBackground";
 import AnimatedFeature from "./client/AnimatedFeature";
 import GoDashboard from "./GoDashboard";
@@ -29,28 +31,42 @@ export default function HeroSection() {
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   {t("hero.subtitle")}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <GoDashboard>
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="gap-2 text-lg px-8"
-                    >
-                      {t("hero.cta")}
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </GoDashboard>
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-start items-center gap-4" id="top-buttons">
+                    <GoDashboard>
+                      <Button
+                        type="submit"
+                        size="lg"
+                        className="gap-2 text-lg px-6 shrink-0"
+                      >
+                        {t("hero.cta")}
+                        <ArrowRight className="w-5 h-5" />
+                      </Button>
+                    </GoDashboard>
 
-                  <GoDashboard type="templates">
+                    <GoDashboard type="templates">
+                      <Button
+                        type="submit"
+                        size="lg"
+                        variant="outline"
+                        className="gap-2 text-lg px-6 shrink-0"
+                      >
+                        {t("hero.secondary")}
+                      </Button>
+                    </GoDashboard>
+
                     <Button
-                      type="submit"
-                      size="lg"
                       variant="outline"
-                      className="gap-2 text-lg px-8"
+                      size="lg"
+                      className="gap-2 text-lg px-6 shrink-0"
+                      onClick={() => {
+                        window.open("https://www.givemeoc.com/?aff=1740", "_blank");
+                      }}
                     >
-                      {t("hero.secondary")}
+                      校招岗位汇总
+                      <ExternalLink className="w-5 h-5" />
                     </Button>
-                  </GoDashboard>
+                  </div>
                 </div>
               </div>
             </div>
