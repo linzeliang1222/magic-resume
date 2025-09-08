@@ -5,6 +5,7 @@ import CTASection from "@/components/home/CTASection";
 import Footer from "@/components/home/Footer";
 import NewsAlert from "@/components/home/NewsAlert";
 import FAQSection from "@/components/home/FAQSection";
+import OCModalClient from "@/components/home/OCModalClient";
 
 export default function LandingPage() {
   return (
@@ -18,6 +19,7 @@ export default function LandingPage() {
       <FAQSection />
       <CTASection />
       <Footer />
+      <OCModalClient />
     </div>
   );
 }
