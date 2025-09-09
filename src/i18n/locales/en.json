@@ -307,7 +307,7 @@
         "website": "Website",
         "location": "Location",
         "birthDate": "Birth Date",
-        "employementStatus": "Employ"
+        "employmentStatus": "Employ"
       },
       "fieldVisibility": {
         "show": "Show",

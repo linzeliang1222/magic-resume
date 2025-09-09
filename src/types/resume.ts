@@ -69,7 +69,7 @@ export interface BasicInfo {
   phone: string;
   location: string;
   icons: Record<string, string>;
-  employementStatus: string;
+  employmentStatus: string;
   photo: string;
   photoConfig: PhotoConfig;
   fieldOrder?: BasicFieldType[];

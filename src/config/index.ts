@@ -6,7 +6,7 @@ export const DEFAULT_FIELD_ORDER: BasicFieldType[] = [
   { id: "2", key: "title", label: "职位", type: "text", visible: true },
   {
     id: "3",
-    key: "employementStatus",
+    key: "employmentStatus",
     label: "状态",
     type: "text",
     visible: true
@@ -107,8 +107,8 @@ export const DEFAULT_TEMPLATES: ResumeTemplate[] = [
 export const GITHUB_REPO_URL = "https://github.com/JOYCEQL/magic-resume";
 
 export const PDF_EXPORT_CONFIG = {
-  SERVER_URL:
-    "https://1255612844-0z3iovadu8.ap-chengdu.tencentscf.com/generate-pdf",
+  SERVER_URL: "/api/export-pdf", // 使用本地API接口
+  // SERVER_URL: "https://1255612844-0z3iovadu8.ap-chengdu.tencentscf.com/generate-pdf", // 外部接口
   TIMEOUT: 30000, // 30秒超时
   MAX_RETRY: 3 // 最大重试次数
 } as const;

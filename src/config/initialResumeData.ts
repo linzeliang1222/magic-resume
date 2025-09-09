@@ -16,9 +16,9 @@ const initialGlobalSettings: GlobalSettings = {
 export const initialResumeState = {
   title: "新建简历",
   basic: {
-    name: "魔方",
+    name: "Rayin",
     title: "高级前端工程师",
-    employementStatus: "离职",
+    employmentStatus: "离职",
     email: "zhangsan@example.com",
     phone: "13800138000",
     location: "北京市朝阳区",
@@ -28,7 +28,7 @@ export const initialResumeState = {
       email: "Mail",
       phone: "Phone",
       birthDate: "CalendarRange",
-      employementStatus: "Briefcase",
+      employmentStatus: "Briefcase",
       location: "MapPin",
     },
     photoConfig: DEFAULT_CONFIG,
@@ -173,7 +173,7 @@ export const initialResumeStateEn = {
   basic: {
     name: "John Smith",
     title: "Senior Frontend Engineer",
-    employementStatus: "Available",
+    employmentStatus: "Available",
     email: "john.smith@123.com",
     phone: "555-123-4567",
     location: "San Francisco, CA",
@@ -183,7 +183,7 @@ export const initialResumeStateEn = {
       email: "Mail",
       phone: "Phone",
       birthDate: "CalendarRange",
-      employementStatus: "Briefcase",
+      employmentStatus: "Briefcase",
       location: "MapPin",
     },
     photoConfig: DEFAULT_CONFIG,
