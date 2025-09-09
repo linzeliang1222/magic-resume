@@ -19,9 +19,11 @@ export async function POST(req: Request) {
 
     // 检查是否为开发环境
     const isDev = process.env.NODE_ENV === 'development';
+    // 检查是否在Docker环境中
+    const isDocker = process.env.DOCKER === 'true' || fs.existsSync('/.dockerenv');
 
     // 配置 Puppeteer
-    if (isDev) {
+    if (isDev && !isDocker) {
       // 开发环境使用本地 Chrome
       const puppeteerFull = await import('puppeteer');
 
@@ -40,11 +42,50 @@ export async function POST(req: Request) {
         ]
       });
     } else {
-      // 生产环境使用 Chromium
+      // 生产环境或Docker环境使用 Chromium
+      let executablePath;
+      
+      try {
+        // 尝试使用 @sparticuz/chromium
+        executablePath = await chromium.executablePath();
+      } catch (error) {
+        console.log('Chromium executablePath failed, trying alternatives:', (error as Error).message);
+        
+        // 备用方案：尝试系统安装的 Chromium 路径
+        const commonChromiumPaths = [
+          '/usr/bin/chromium-browser',  // Ubuntu/Debian
+          '/usr/bin/chromium',          // Alpine/其他
+          '/usr/bin/google-chrome',     // Google Chrome
+          '/usr/bin/google-chrome-stable',
+          '/opt/google/chrome/chrome'   // 容器中的Google Chrome
+        ];
+        
+        for (const path of commonChromiumPaths) {
+          if (fs.existsSync(path)) {
+            executablePath = path;
+            console.log('Found Chromium at:', path);
+            break;
+          }
+        }
+        
+        if (!executablePath) {
+          throw new Error('No Chromium executable found. Please install Chromium in your Docker container.');
+        }
+      }
+
       browser = await puppeteer.launch({
-        args: [...chromium.args, '--font-render-hinting=none'],
-        executablePath: await chromium.executablePath(),
-        headless: chromium.headless
+        args: [
+          ...chromium.args,
+          '--font-render-hinting=none',
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-gpu',
+          '--disable-web-security',
+          '--hide-scrollbars'
+        ],
+        executablePath,
+        headless: chromium.headless || 'new'
       });
     }
 
