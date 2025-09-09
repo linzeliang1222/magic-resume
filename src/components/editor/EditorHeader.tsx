@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { AlertCircle, TriangleAlert } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
@@ -52,10 +52,10 @@ export function EditorHeader({ isMobile }: EditorHeaderProps) {
             <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
           </motion.div>
           
-          <div className="flex items-center space-x-2 px-3 py-1.5 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg">
-            <TriangleAlert className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-            <span className="text-xs text-amber-700 dark:text-amber-300 font-medium">
-              本网站免费使用，但近期接口部署平台成本日益升高，现已欠费暂停，请使用备份导出功能，作者会尽快解决。
+          <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
+            <div className="w-2 h-2 rounded-full bg-green-500" />
+            <span className="text-xs text-green-700 dark:text-green-300 font-medium">
+              本网站免费使用
             </span>
           </div>
         </div>
