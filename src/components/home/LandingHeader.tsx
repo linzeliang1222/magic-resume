@@ -4,13 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { FileText, Menu, Moon, Sun, X, ExternalLink } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/shared/Logo";
 import ThemeToggle from "@/components/shared/ThemeToggle";
 import LanguageSwitch from "@/components/shared/LanguageSwitch";
-import { GitHubStars } from "@/components/shared/GitHubStars";
+import { OCButton } from "@/components/shared/OCButton";
+import { OfferGuideButton } from "@/components/shared/OfferGuideButton";
 import ScrollHeader from "./client/ScrollHeader";
 import MobileMenu from "./client/MobileMenu";
 import GoDashboard from "./GoDashboard";
@@ -42,7 +43,8 @@ export default function LandingHeader() {
                   <Moon className="h-[1.2rem] w-[1.2rem] absolute inset-0 m-auto rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 </div>
               </ThemeToggle>
-              <GitHubStars />
+              <OCButton />
+              <OfferGuideButton />
 
               {/* <Link
                 href={`/${locale}/changelog`}

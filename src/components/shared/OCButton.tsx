@@ -1,12 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const OC_URL = "https://www.givemeoc.com/?aff=1740";
 
-export function GitHubStars() {
+export function OCButton() {
+  const t = useTranslations("home");
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -59,7 +61,7 @@ export function GitHubStars() {
         />
       </motion.div>
 
-      <span className="relative z-10 text-sm font-medium">校招岗位汇总</span>
+      <span className="relative z-10 text-sm font-medium">{t("header.oc")}</span>
     </motion.a>
   );
 }

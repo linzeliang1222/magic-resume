@@ -63,7 +63,7 @@ export default function HeroSection() {
                         window.open("https://www.givemeoc.com/?aff=1740", "_blank");
                       }}
                     >
-                      校招岗位汇总
+                      {t("header.oc")}
                       <ExternalLink className="w-5 h-5" />
                     </Button>
                   </div>

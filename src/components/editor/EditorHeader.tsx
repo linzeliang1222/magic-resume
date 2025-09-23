@@ -55,7 +55,7 @@ export function EditorHeader({ isMobile }: EditorHeaderProps) {
           <div className="flex items-center space-x-2 px-3 py-1.5 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
             <div className="w-2 h-2 rounded-full bg-green-500" />
             <span className="text-xs text-green-700 dark:text-green-300 font-medium">
-              本网站免费使用
+              {t("previewDock.freeToUse")}
             </span>
           </div>
         </div>
@@ -67,13 +67,13 @@ export function EditorHeader({ isMobile }: EditorHeaderProps) {
                 <div className="flex items-center space-x-1 cursor-pointer">
                   <AlertCircle className="w-4 h-4 text-red-500" />
                   <span className="text-sm text-red-500">
-                    发现 {errors.length} 个问题
+                    {t("previewDock.grammarIssues", { count: errors.length })}
                   </span>
                 </div>
               </HoverCardTrigger>
               <HoverCardContent className="w-80">
                 <div className="space-y-2">
-                  <h4 className="text-sm font-medium">语法检查结果</h4>
+                  <h4 className="text-sm font-medium">{t("previewDock.grammarResults")}</h4>
                   <div className="space-y-1">
                     {errors.map((error, index) => (
                       <div key={index} className="text-sm space-y-1">
@@ -88,13 +88,13 @@ export function EditorHeader({ isMobile }: EditorHeaderProps) {
                                 className="h-6 px-2 text-xs"
                                 onClick={() => selectError(index)}
                               >
-                                定位
+                                {t("previewDock.locate")}
                               </Button>
                             </div>
                             {error.suggestions.length > 0 && (
                               <div className="mt-1">
                                 <p className="text-xs text-muted-foreground font-medium">
-                                  建议修改：
+                                  {t("previewDock.suggestions")}
                                 </p>
                                 {error.suggestions.map((suggestion, i) => (
                                   <p
@@ -118,10 +118,10 @@ export function EditorHeader({ isMobile }: EditorHeaderProps) {
           <Input
             defaultValue={activeResume?.title || ""}
             onBlur={(e) => {
-              updateResumeTitle(e.target.value || "未命名简历");
+              updateResumeTitle(e.target.value || t("previewDock.untitledResume"));
             }}
             className="w-60  text-sm hidden md:block"
-            placeholder="简历名称"
+            placeholder={t("previewDock.resumeName")}
           />
 
           <ThemeToggle></ThemeToggle>

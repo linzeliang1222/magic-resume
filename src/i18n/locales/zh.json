@@ -18,7 +18,9 @@
       "about": "关于我们",
       "login": "登录",
       "register": "注册",
-      "dashboard": "控制台"
+      "dashboard": "控制台",
+      "oc": "校招岗位汇总",
+      "offerGuide": "校招指南"
     },
     "hero": {
       "badge": "免费简历创作",
@@ -580,6 +582,13 @@
   },
   "previewDock": {
     "switchTemplate": "切换模版",
+    "freeToUse": "本网站免费使用",
+    "grammarIssues": "发现 {count} 个问题",
+    "grammarResults": "语法检查结果",
+    "locate": "定位",
+    "suggestions": "建议修改：",
+    "resumeName": "简历名称",
+    "untitledResume": "未命名简历",
     "grammarCheck": {
       "idle": "AI语法纠错",
       "checking": "检查中...",

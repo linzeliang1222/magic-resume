@@ -18,7 +18,9 @@
       "about": "About",
       "login": "Login",
       "register": "Register",
-      "dashboard": "Dashboard"
+      "dashboard": "Dashboard",
+      "oc": "Campus Jobs",
+      "offerGuide": "Offer Guide"
     },
     "hero": {
       "badge": "Smart Resume Creation",
@@ -201,6 +203,13 @@
   },
   "previewDock": {
     "switchTemplate": "Switch Template",
+    "freeToUse": "Free to Use",
+    "grammarIssues": "Found {count} issues",
+    "grammarResults": "Grammar Check Results",
+    "locate": "Locate",
+    "suggestions": "Suggestions:",
+    "resumeName": "Resume Name",
+    "untitledResume": "Untitled Resume",
     "grammarCheck": {
       "idle": "AI Grammar Check",
       "checking": "Checking...",
