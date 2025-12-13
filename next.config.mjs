@@ -14,6 +14,7 @@ const config = {
     ignoreBuildErrors: true,
   },
   // output: "export",
+  output: 'standalone',
 };
 
 export default withNextIntl(config);
