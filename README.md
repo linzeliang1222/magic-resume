@@ -6,6 +6,9 @@
 ![Next.js](https://img.shields.io/badge/Next.js-14.0-black)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.0-purple)
 
+<a href="https://trendshift.io/repositories/13077" target="_blank"><img src="https://trendshift.io/api/badge/repositories/13077" alt="Magic Resume | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+
+
 简体中文 | [English](./README.en-US.md)
 
 </div>
@@ -14,7 +17,7 @@ Magic Resume 是一个现代化的在线简历编辑器，让创建专业简历�
 
 ## 📸 项目截图
 
-![782shots_so](https://github.com/user-attachments/assets/d59f7582-799c-468d-becf-59ee6453acfd)
+<img width="1200" height="676" alt="63_1x_shots_so" src="https://github.com/user-attachments/assets/bcde7758-2f1e-44c1-9123-b2673069ed2b" />
 
 ## ✨ 特性
 
@@ -110,7 +113,7 @@ docker pull siyueqingchen/magic-resume:main
 - [x] 多语言支持
 - [ ] 支持更多简历模板
 - [ ] 更多格式导出
-- [ ] 自定义模型
+- [x] 自定义模型
 - [ ] 智能一页
 - [ ] 导入 PDF, Markdown 等
 - [ ] 在线简历托管
@@ -127,7 +130,5 @@ docker pull siyueqingchen/magic-resume:main
 - 项目主页：https://github.com/JOYCEQL/magic-resume
 
 ## 🌟 支持项目
-
-项目接口成本现正在持续上升中，如果对你有所帮助，可以赞赏作者，支持开源～
 
 <img src="https://github.com/JOYCEQL/picx-images-hosting/raw/master/pintu-fulicat.com-1741081632544.26lmg2uc2m.webp" width="320"  alt="图片描述">
