@@ -9,7 +9,12 @@ type Props = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://magicv.art"),
+  metadataBase: new URL("https://resume.rayinlab.cn"),
+  verification: {
+    other: {
+      'msvalidate.01': 'AB4F1F58A847C9FF9643B1114135D0BF'
+    }
+  },
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
