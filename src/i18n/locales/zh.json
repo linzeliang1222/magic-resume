@@ -190,6 +190,7 @@
     "button": {
       "export": "导出",
       "exportPdf": "PDF",
+      "exportPdfBackup": "PDF备用{index}",
       "exportJson": "JSON配置",
       "exporting": "导出中...",
       "exportingJson": "导出中...",
@@ -614,6 +615,7 @@
     "export": {
       "tooltip": "导出简历",
       "pdf": "导出PDF",
+      "pdfBackup": "导出PDF备用{index}",
       "json": "导出JSON",
       "print": "导出PDF(备份）"
     }

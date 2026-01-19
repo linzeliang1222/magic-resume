@@ -89,7 +89,7 @@ const PdfExport = () => {
   const t = useTranslations("pdfExport");
   const printFrameRef = useRef<HTMLIFrameElement>(null);
 
-  const handleExport = async () => {
+  const handleExport = async (serverUrl?: string) => {
     const exportStartTime = performance.now();
     setIsExporting(true);
 
@@ -112,7 +112,8 @@ const PdfExport = () => {
         optimizeImages(clonedElement)
       ]);
 
-      const response = await fetch(PDF_EXPORT_CONFIG.SERVER_URL, {
+      const targetUrl = serverUrl || PDF_EXPORT_CONFIG.SERVER_URL;
+      const response = await fetch(targetUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -333,14 +334,33 @@ const PdfExport = () => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem onClick={handleExport} disabled={isLoading}>
+          {/* 主 PDF 导出 */}
+          <DropdownMenuItem onClick={() => handleExport()} disabled={isLoading}>
             <Download className="w-4 h-4 mr-2" />
             {t("button.exportPdf")}
           </DropdownMenuItem>
+
+          {/* 备用服务器导出 */}
+          {PDF_EXPORT_CONFIG.BACKUP_URLS.map((url, index) => (
+            <DropdownMenuItem
+              key={`backup-${index}`}
+              onClick={() => handleExport(url)}
+              disabled={isLoading}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              {t("button.exportPdfBackup", { index: index + 1 })}
+            </DropdownMenuItem>
+          ))}
+
+          {/* 最后一个备用 - 打印 */}
           <DropdownMenuItem onClick={handlePrint} disabled={isLoading}>
             <Printer className="w-4 h-4 mr-2" />
-            {t("button.print")}
+            {t("button.exportPdfBackup", {
+              index: PDF_EXPORT_CONFIG.BACKUP_URLS.length + 1
+            })}
           </DropdownMenuItem>
+
+          {/* JSON 配置导出 */}
           <DropdownMenuItem onClick={handleJsonExport} disabled={isLoading}>
             <FileJson className="w-4 h-4 mr-2" />
             {t("button.exportJson")}

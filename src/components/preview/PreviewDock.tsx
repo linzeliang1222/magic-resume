@@ -147,7 +147,7 @@ const PreviewDock = ({
     console.log(`Image processing took ${performance.now() - startTime}ms`);
   };
 
-  const handleExportPdf = async () => {
+  const handleExportPdf = async (serverUrl?: string) => {
     const exportStartTime = performance.now();
     setIsExporting(true);
 
@@ -170,7 +170,8 @@ const PreviewDock = ({
         optimizeImages(clonedElement)
       ]);
 
-      const response = await fetch(PDF_EXPORT_CONFIG.SERVER_URL, {
+      const targetUrl = serverUrl || PDF_EXPORT_CONFIG.SERVER_URL;
+      const response = await fetch(targetUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -509,20 +510,39 @@ const PreviewDock = ({
                     </TooltipContent>
                   </Tooltip>
                   <DropdownMenuContent align="end" side="left">
+                    {/* 主 PDF 导出 */}
                     <DropdownMenuItem
-                      onClick={handleExportPdf}
+                      onClick={() => handleExportPdf()}
                       disabled={isLoading}
                     >
                       <Download className="w-4 h-4 mr-2" />
                       {t("export.pdf")}
                     </DropdownMenuItem>
+
+                    {/* 备用服务器导出 */}
+                    {PDF_EXPORT_CONFIG.BACKUP_URLS.map((url, index) => (
+                      <DropdownMenuItem
+                        key={`backup-${index}`}
+                        onClick={() => handleExportPdf(url)}
+                        disabled={isLoading}
+                      >
+                        <Download className="w-4 h-4 mr-2" />
+                        {t("export.pdfBackup", { index: index + 1 })}
+                      </DropdownMenuItem>
+                    ))}
+
+                    {/* 最后一个备用 - 打印 */}
                     <DropdownMenuItem
                       onClick={handlePrint}
                       disabled={isLoading}
                     >
                       <Printer className="w-4 h-4 mr-2" />
-                      {t("export.print")}
+                      {t("export.pdfBackup", {
+                        index: PDF_EXPORT_CONFIG.BACKUP_URLS.length + 1
+                      })}
                     </DropdownMenuItem>
+
+                    {/* JSON 配置导出 */}
                     <DropdownMenuItem
                       onClick={handleExportJson}
                       disabled={isLoading}

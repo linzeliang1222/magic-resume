@@ -189,6 +189,7 @@
     "button": {
       "export": "Export",
       "exportPdf": "Export PDF (Server)",
+      "exportPdfBackup": "Export PDF Backup {index}",
       "exportJson": "Export JSON Config",
       "exporting": "Exporting...",
       "exportingJson": "Exporting...",
@@ -235,6 +236,7 @@
     "export": {
       "tooltip": "Export Resume",
       "pdf": "Export PDF",
+      "pdfBackup": "Export PDF Backup {index}",
       "json": "Export JSON",
       "print": "Print"
     }
