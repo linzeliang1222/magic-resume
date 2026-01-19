@@ -108,7 +108,7 @@ export const GITHUB_REPO_URL = "https://github.com/JOYCEQL/magic-resume";
 
 export const PDF_EXPORT_CONFIG = {
   // SERVER_URL: "https://api.magicv.art/generate-pdf",
-  SERVER_URL: "https://resume.zller.cn/generate-pdf",
+  SERVER_URL: "https://resume.rayinlab.cn/generate-pdf",
   BACKUP_URLS: [
     "https://resume.rayinlab.cn/export-pdf",
   ],
